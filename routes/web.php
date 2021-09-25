@@ -33,14 +33,12 @@ Route::get("/register",[RegisterController::class,"index"])->name("Register");
 Route::post("/register/store",[RegisterController::class,"store"]);
 
 
-Route::post("/logout",[LogoutController::class,"logout"])->name("Logout");
+Route::post("/logout",[LogoutController::class,"logout"])->name("Logout")->name('Logout');
 
 Route::get("/dashboard",[DashboardController::class,"index"])->name("Dashboard");
 
 Route::get("/user/profile",[ProfileController::class,"index"])->name("Profile");
 Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->name("On-Update");
-
-
 
 // Admin
 Route::middleware('auth')->group(function(){
@@ -49,6 +47,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/type', [AdminController::class, 'courseType'])->name('courseType');
     Route::get('/admin/selection', [AdminController::class, 'courseSelection'])->name('courseSelection');
 });
+
 
 
 
