@@ -43,8 +43,13 @@ Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->n
 
 
 // Admin
+Route::middleware('auth')->group(function(){
+    Route::get("/admin/index",[AdminController::class,"index"])->name("Admin");
+    Route::get('/admin/course', [AdminController::class, 'course'])->name('course');
+    Route::get('/admin/type', [AdminController::class, 'courseType'])->name('courseType');
+    Route::get('/admin/selection', [AdminController::class, 'courseSelection'])->name('courseSelection');
+});
 
-Route::get("/admin/index",[AdminController::class,"index"])->name("Admin");
 
 
 
