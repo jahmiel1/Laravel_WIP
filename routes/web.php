@@ -40,11 +40,10 @@ Route::get("/dashboard",[DashboardController::class,"index"])->name("Dashboard")
 Route::get("/user/profile",[ProfileController::class,"index"])->name("Profile");
 Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->name("On-Update");
 
-
-
 // Admin
 
 Route::get("/admin/index",[AdminController::class,"index"])->name("Admin");
+
 
 
 
