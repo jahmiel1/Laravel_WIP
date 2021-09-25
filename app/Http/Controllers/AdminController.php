@@ -19,9 +19,10 @@ class AdminController extends Controller
         $category=TypesOfCourse::all()->count();
         $recent=StudentSelection::latest('enroll_dt')->get();
 
-        return view('admin.index',compact('students', 'approved', 'course','category', '$recent'));
+        return view('admin.index',compact('students', 'approved', 'course','category', 'recent'));
     }
     public function course(){
+        
         return view('admin.course');
     }
     public function courseType(){
