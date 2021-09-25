@@ -43,10 +43,10 @@
             <form>@csrf
             <li class="py-2 px-2 hover:bg-blue-600 duration-300 hover:text-white cursor-pointer"> 
                 <button
-                    class="appearance-none"
+                    class="pr-10 focus:outline-none"
                     formaction="{{route('Logout')}}"
                     formmethod="post"
-                    type="button"
+                    type="submit"
                 >Logout</button> 
             </li>
             </form> 
