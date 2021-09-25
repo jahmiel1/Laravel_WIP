@@ -21,15 +21,6 @@ class AdminController extends Controller
 
         return view('admin.index',compact('students', 'approved', 'course','category', '$recent'));
     }
-<<<<<<< HEAD
-    
-    public function totalStudents(){
-        
-
-    }
-
-    
-=======
     public function course(){
         return view('admin.course');
     }
@@ -39,5 +30,4 @@ class AdminController extends Controller
     public function courseSelection(){
         return view('admin.courseSelection');
     }
->>>>>>> 62bdb1c2d09ffb77ebec214559e2e19b83506862
 }
