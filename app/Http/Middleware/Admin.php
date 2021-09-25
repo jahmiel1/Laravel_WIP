@@ -17,7 +17,10 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::id() != null);
+        
+        if (session()->missing('admin')){
+            return redirect()->back();
+        }
         return $next($request);
     }
 }
