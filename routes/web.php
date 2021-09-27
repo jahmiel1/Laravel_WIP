@@ -37,6 +37,8 @@ Route::post("/logout",[LogoutController::class,"logout"])->name("Logout");
 
 Route::get("/dashboard",[DashboardController::class,"index"])->name("Dashboard");
 
+Route::get("/courses",[DashboardController::class,"courses"])->name("courses");
+
 Route::get("/user/profile",[ProfileController::class,"index"])->name("Profile");
 Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->name("On-Update");
 
@@ -50,6 +52,10 @@ Route::get("/course_selection",[DashboardController::class,"index"])->name("cour
     Route::get('/admin/course', [AdminController::class, 'course'])->name('course');
     Route::get('/admin/type', [AdminController::class, 'courseType'])->name('courseType');
     Route::get('/admin/selection', [AdminController::class, 'courseSelection'])->name('courseSelection');
+    Route::get('/admin/course/update{id}', [AdminController::class, 'displayCourse'])->name('displayCourse');
+    Route::post('/admin/course/update',[AdminController::class,'updateCourse'])->name('updateCourse');
+
+    Route::get('/admin/course/delete{id}', [AdminController::class, 'delete'])->name('deleteCourse');
 });
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,7 +12,11 @@ class DashboardController extends Controller
         return view("auth.dashboard");
 
     }
-    public function course_selection() {
-        return view("course_selection");
+
+    public function courses(){
+        $courses=Course::all();
+        return view('courses',[
+            'courses'=>$courses,
+        ]);
     }
 }
