@@ -37,6 +37,13 @@ Route::post("/logout",[LogoutController::class,"logout"])->name("Logout");
 
 Route::get("/dashboard",[DashboardController::class,"index"])->name("Dashboard");
 
+
+Route::get("/course_selection",[DashboardController::class,"course_selection"])->name("course_selcetion");
+Route::post("/course_add",[DashboardController::class,"course_add"])->name("course_add");
+
+// Route::post("/added",[DashboardController::class,"added"])->name("added");
+
+
 Route::get("/user/profile",[ProfileController::class,"index"])->name("Profile");
 Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->name("On-Update");
 
@@ -51,6 +58,7 @@ Route::middleware('admin')->group(function(){
 
     Route::get('/admin/course/delete{id}', [AdminController::class, 'delete'])->name('deleteCourse');
 });
+
 
 
 
