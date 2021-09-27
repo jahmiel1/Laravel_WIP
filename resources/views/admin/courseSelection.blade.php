@@ -6,6 +6,8 @@
 
 @section('content')
 
+
+
     
 
 @endsection

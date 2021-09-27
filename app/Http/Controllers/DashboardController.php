@@ -11,4 +11,7 @@ class DashboardController extends Controller
         return view("auth.dashboard");
 
     }
+    public function course_selection() {
+        return view("course_selection");
+    }
 }

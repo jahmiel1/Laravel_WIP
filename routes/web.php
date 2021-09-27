@@ -40,8 +40,12 @@ Route::get("/dashboard",[DashboardController::class,"index"])->name("Dashboard")
 Route::get("/user/profile",[ProfileController::class,"index"])->name("Profile");
 Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->name("On-Update");
 
+
+Route::get("/course_selection",[DashboardController::class,"index"])->name("course_selection");
+
+
 // Admin
-Route::middleware('admin')->group(function(){
+    Route::middleware('admin')->group(function(){
     Route::get("/admin/index",[AdminController::class,"index"])->name("Admin");
     Route::get('/admin/course', [AdminController::class, 'course'])->name('course');
     Route::get('/admin/type', [AdminController::class, 'courseType'])->name('courseType');
